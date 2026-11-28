@@ -8,4 +8,4 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
-Route::apiResource('obat', ObatApiController::class);
+Route::apiResource('obat', ObatApiController::class)->names('api.obat');

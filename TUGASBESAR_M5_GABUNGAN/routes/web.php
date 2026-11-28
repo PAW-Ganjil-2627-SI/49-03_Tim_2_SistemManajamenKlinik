@@ -37,4 +37,5 @@ Route::middleware('cek.login')->group(function () {
 
     // Ruang Poliklinik (menampilkan data)
     Route::get('/poli-klinik', [PoliController::class, 'index'])->name('poli.index');
+    Route::view('/obat-api', 'obat.api');
 });
