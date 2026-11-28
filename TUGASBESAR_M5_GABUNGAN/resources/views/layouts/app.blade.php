@@ -24,7 +24,7 @@
             <li><a href="{{ route('beranda') }}">Beranda</a></li>
             <li><a href="{{ route('pasien.index') }}">Manajemen Pasien</a></li>
             <li><a href="{{ route('dokters.index') }}">Data Dokter</a></li>
-            <li><a href="{{ asset('farmasi.html') }}">Katalog Farmasi</a></li>
+            <li><a href="{{ route('obat.index') }}">Katalog Farmasi</a></li>
             <li><a href="{{ route('poli.index') }}">Ruang Poliklinik</a></li>
 
             {{-- Sisi kanan navigasi: status login --}}

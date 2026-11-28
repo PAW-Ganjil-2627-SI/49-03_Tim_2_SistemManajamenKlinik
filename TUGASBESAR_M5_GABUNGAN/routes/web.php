@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DokterController;
+use App\Http\Controllers\ObatController;
 use App\Http\Controllers\PasienController;
 use App\Http\Controllers\PoliController;
 use Illuminate\Support\Facades\Route;
@@ -18,11 +19,13 @@ Route::middleware('cek.login')->group(function () {
 
     // Data Dokter: semua pengguna yang login boleh MELIHAT
     Route::resource('dokters', DokterController::class)->only('index');
+    Route::resource('obat', ObatController::class)->only('index');
 
     // Hanya admin: tambah / ubah / hapus
     Route::middleware('role:admin')->group(function () {
         Route::resource('pasien', PasienController::class)->except(['create', 'show']);
         Route::resource('dokters', DokterController::class)->except(['index', 'show']);
+        Route::resource('obat', ObatController::class)->except(['index', 'show']);
         
         // Ruang Poliklinik: tambah / ubah / hapus (admin)
         Route::get('/poli-klinik/tambah', [PoliController::class, 'create'])->name('poli.create');
